@@ -1,0 +1,36 @@
+# 三、Host + Server Browser + Join Widgets
+
+在这里首先进行资源的一些整理，在 Widgets 文件夹中的 MainMenu 文件夹中，我们有一个 WB_Base_Button widget blueprint 组件，我们最好创建一个 Base 文件夹用来存放这些基本类从而让文件有条理性
+
+将任何资产在 UE5 中移动的时候，有时我们会获得 redirector，redirector 在使用的过程中可能会变得混乱，因为有可能有错误的引用，因此为了确保始终有正确的引用 reference，我们可以右键 content 选择 Update Redirector References
+
+![[Pasted image 20240705063837.png]]
+
+接下来创建 host game screen，回到 MainMenu 中，创建一个文件夹命名为 Sessions，然后在该文件夹下面创建一个 WB_CreateGame 的 widget blueprint ；
+
+![[Pasted image 20240705085035.png]]
+
+然后创建一个 WB_ServerBrowser_Item
+
+![[Pasted image 20240705085119.png]]
+
+接着创建一个 WB_ServerBrowser
+
+![[Pasted image 20240705085140.png]]
+
+同时在每一个 Back Button 绑定一个 dispatcher ，命名为 OnClicked_Back_Button
+
+![[Pasted image 20240705085231.png]]
+
+然后在 WB_MainMenu 中使用 WidgetSwitcher 包裹住 WB_CreateGame，WB_ServerBrowser
+
+![[Pasted image 20240705085649.png]]
+
+最后在 WB_MainMenu 的 Graph 中实现事件触发
+
+![[Pasted image 20240705091139.png]]
+
+实现效果如下
+
+![[GIF 2024-7-5 周五 9-22-35.gif]]
+
