@@ -17,9 +17,8 @@ pip install -r requirements.txt
 
 ### 获取 cookie
 
-![[获取cookie.png#pic_center]]
-
+![获取cookie](./Pic/获取cookie.png#pic_center)
 
 ### 使用说明
 
-![[使用说明.png#pic_center]]
+![使用说明](./Pic/使用说明.png#pic_center)
