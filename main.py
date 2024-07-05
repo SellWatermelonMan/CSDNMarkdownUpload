@@ -40,7 +40,10 @@ class CSDNTransform:
         first_image_lst = re.findall(r"(!\[\[.*]])", self.markdown_text)
 
         # 由于可能会出现匹配错误的情况，因此我们通过判断图片是否存在来做一遍过滤，在这里没有找到文件就是 None
-        posterior_image_lst = [(file_name, self._get_target_image_path(file_name[3:-2])) for file_name in first_image_lst]
+        posterior_image_lst = [
+            (file_name, self._get_target_image_path(file_name[3:-2]))
+            for file_name in first_image_lst
+        ]
 
         self.image_list = posterior_image_lst
         self.exist_image_list = [item for item in self.image_list if item[1]]
@@ -89,11 +92,11 @@ if __name__ == "__main__":
     # 设置 CSDN 的 cookie
     cookie = ""
     # 设置 Markdown 文件中图片的模糊地址或者 Markdown 的系统地址
-    walk_path = "C:/Users/Administrator/Documents/Obsidian Vault/"
+    walk_path = "Please provide the path to your Markdown project or the folder where you saved your images."
 
     # 由于 CSDN 上传图片次数过多会出现上传失败的问题，所以这里给出两种方式，如下：
     # 方式一：直接给需要上传的 markdown.md 文件的地址
-    # file_path = 'C:/Users/Administrator/Documents/Obsidian Vault/UE开发/Animation Blueprint.md'
+    # file_path = 'Please provide the path to your Markdown.md file'
     # 方式二：直接复制粘贴到当前目录下的 markdown.txt 上
     file_path = "./markdown.txt"
 
